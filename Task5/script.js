@@ -1,0 +1,27 @@
+function analyzeText() {
+    let text = document.getElementById("textInput").value;
+
+    
+    if (text.trim() === "") {
+        document.getElementById("result").innerHTML =
+            "<p>Please enter some text.</p>";
+        return;
+    }
+
+    
+    let charCount = text.length;
+
+    
+    let words = text.trim().split(/\s+/);
+    let wordCount = words.length;
+
+    
+    let reversedText = text.split("").reverse().join("");
+
+    
+    document.getElementById("result").innerHTML = `
+        <p><strong>Total Characters:</strong> ${charCount}</p>
+        <p><strong>Total Words:</strong> ${wordCount}</p>
+        <p><strong>Reversed Text:</strong><br>${reversedText}</p>
+    `;
+}
